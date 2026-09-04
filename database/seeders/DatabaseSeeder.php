@@ -59,7 +59,7 @@ class DatabaseSeeder extends Seeder
         $adminPassword = env('ADMIN_PASSWORD');
 
         if ($adminEmail && $adminPassword) {
-            User::firstOrCreate(
+            User::updateOrCreate(
                 ['email' => $adminEmail],
                 [
                     'name' => env('ADMIN_NAME', 'Bible Vision Admin'),
